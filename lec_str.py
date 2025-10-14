@@ -1,10 +1,10 @@
 a = 'Good'
-b = 'Bad'
-print(a + b)
+#b = 'Bad'
+#print(a + b)
 
 # print(a - b)
  
-print(a * 3)
+#print(a * 3)
 # print(a * 1.5)
 c = 50
 d = 10
