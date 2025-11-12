@@ -1,6 +1,5 @@
-a = int(input())
-b = int(input())
-if b == 0:
-    print('Деление на 0!')
+year = int(input())
+if year % 4 == 0:
+    print('високостный')
 else:
-    print(a // b, a % b)
+    print('невисокостный')
