@@ -37,7 +37,7 @@ for seg in segments:
 
 plt.xlabel('X')
 plt.ylabel('Y')
-plt.title('Кривая Коха')
+plt.title('Криявя Коха')
 plt.axis('equal')
 plt.savefig('koch_curve.png')
 plt.show()
