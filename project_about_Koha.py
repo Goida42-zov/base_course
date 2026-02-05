@@ -1,9 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def koch_step(segment):
-    start, end = segment
-    one_third = (end - start) / 3
+def koch_step(segment): # Принимает отрезок и возвращает 4 новых отрезка, образующих "зуб" Коха
+    start, end = segment # Разложение отрезка на 3 части
+    one_third = (end - start) / 3 # Вычисление вектора, представляющего одну треть отрезка
     point1 = start + one_third
     point2 = start + 2 * one_third
 
@@ -11,7 +11,8 @@ def koch_step(segment):
     angle = np.pi / 3
     rotation = np.array([[np.cos(angle), -np.sin(angle)],
                          [np.sin(angle),  np.cos(angle)]])
-    peak = point1 + rotation @ one_third
+    peak = point1 + rotation @ one_third # Поворот вектора one_third на 60 градусов для получения вершины "зуба" Коха @ - это 
+                                                                                            #оператор матричного умножения в NumPy
 
     return [[start, point1], [point1, peak], [peak, point2], [point2, end]]
 
@@ -21,7 +22,7 @@ p_end   = np.array([1.0, 0.0])
 segments = [[p_start, p_end]]
 
 
-depth = 4
+depth = 4 # Глубина рекурсии - количество итераций, которые мы хотим выполнить для создания кривой Коха. Чем больше глубина, тем более детализированной будет кривая, но и тем больше времени потребуется для ее генерации.
 for _ in range(depth):
     new_segments = []
     for seg in segments:
